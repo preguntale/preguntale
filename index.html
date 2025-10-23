@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preguntale</title>
+  <meta name="description" content="Preguntale es una banda nueva de rock alternativo de Buenos Aires. Seguinos para conocer nuestra música y próximas fechas." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg:#0b0b0b;
+      --fg:#f3f4f6;
+      --muted:#9ca3af;
+      --brand:#a78bfa;
+      --card:#151515;
+      --line:#232323;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+      background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9)), url('fotos/fondo.png') center/cover fixed no-repeat;
+      color:var(--fg);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1000px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(11,11,11,.7);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+    .brand .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--brand),#60a5fa)}
+    .links{display:flex;gap:18px}
+    .links a{font-weight:600;color:var(--muted)}
+    .links a:hover{color:#fff}
+    .menu-btn{display:none;background:#1f2937;border:1px solid var(--line);color:#fff;padding:8px 10px;border-radius:10px}
+
+    .hero{padding:100px 24px 60px;text-align:center}
+    .hero img{width:250px;height:250px;border-radius:50%;object-fit:cover;box-shadow:0 0 25px rgba(167,139,250,.2);margin-bottom:20px;transition:transform .3s ease}
+    .hero img:hover{transform:scale(1.05)}
+    .hero h1{font-size: clamp(40px, 8vw, 84px);line-height:1.05;margin:0;font-weight:800;letter-spacing:-1px}
+    .hero .sub{font-size:clamp(16px,2.5vw,20px);color:var(--muted);margin-top:10px}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;justify-content:center}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;font-weight:600;border:1px solid var(--line);background:#111827;transition:.2s}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),#60a5fa);color:#0b0b0b;border:none}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 0 15px rgba(167,139,250,.2)}
+
+    section{padding:42px 24px}
+    .card{background:rgba(21,21,21,0.85);border:1px solid var(--line);border-radius:18px;padding:22px;transition:transform .3s ease, box-shadow .3s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 0 25px rgba(167,139,250,.1)}
+    h2{font-size:26px;margin:0 0 16px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:14px;color:var(--muted)}
+
+    .galeria{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:10px}
+    .galeria img{width:200px;height:200px;object-fit:cover;border-radius:12px;transition:transform .3s ease, box-shadow .3s ease}
+    .galeria img:hover{transform:scale(1.05);box-shadow:0 0 15px rgba(167,139,250,.3)}
+
+    footer{padding:36px 24px;border-top:1px solid var(--line);color:var(--muted);text-align:center}
+    @media (max-width:720px){.links{display:none}.menu-btn{display:inline-flex}.grid{grid-template-columns:1fr}.hero{padding-top:72px}}
+  </style>
+  <script>
+    function toggleMenu(){
+      const links=document.querySelector('.links');
+      links.style.display=links.style.display==='flex'?'none':'flex';
+    }
+    document.addEventListener('DOMContentLoaded',()=>{document.getElementById('year').textContent=new Date().getFullYear()});
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio"><span class="dot"></span><span>Preguntale</span></a>
+      <nav class="links">
+        <a href="#musica">música</a>
+        <a href="#fechas">fechas</a>
+        <a href="#galeria">galería</a>
+        <a href="#contacto">contacto</a>
+        <a href="https://www.instagram.com/preguntale.banda/" target="_blank">instagram</a>
+        <a href="https://www.youtube.com/@PreguntaleMusic" target="_blank">youtube</a>
+      </nav>
+      <button class="menu-btn" onclick="toggleMenu()">menú</button>
+    </div>
+  </header>
+
+  <main id="inicio" class="container">
+    <section class="hero">
+      <img src="fotos/banda1.jpg" alt="foto de la banda">
+      <h1>rock alternativo<br>desde buenos aires</h1>
+      <p class="sub"><strong>Preguntale</strong> · banda nueva · sonido propio</p>
+      <div class="cta">
+        <a class="btn primary" href="https://www.instagram.com/preguntale.banda/" target="_blank"><i class="fa-brands fa-instagram"></i>seguinos</a>
+        <a class="btn" href="https://www.youtube.com/@PreguntaleMusic" target="_blank"><i class="fa-brands fa-youtube"></i>youtube</a>
+        <a class="btn" href="#contacto"><i class="fa-solid fa-envelope"></i>contacto</a>
+      </div>
+    </section>
+
+    <section id="musica">
+      <div class="card">
+        <h2>música</h2>
+        <p>Todavía no tenemos canciones publicadas.  
+        Pronto vamos a subir nuestras primeras grabaciones.  
+        Mientras tanto, podés ver ensayos, clips y novedades en nuestras redes.</p>
+        <p class="mono">instagram▶︎ @preguntale.banda<br>youtube ▶︎ @PreguntaleMusic</p>
+      </div>
+    </section>
+
+    <section id="banda">
+      <div class="card">
+        <h2>sobre la banda</h2>
+        <p><strong>Preguntale</strong> es una banda nueva de <em>rock alternativo</em> de <strong>Buenos Aires</strong>.  
+        Empezamos con ganas de tocar, probar sonidos y disfrutar de lo que hacemos juntos.</p>
+        <p class="mono">estilo: rock alternativo · ciudad: buenos aires · mail: <a href="mailto:preguntale.banda@gmail.com">preguntale.banda@gmail.com</a></p>
+      </div>
+    </section>
+
+    <section id="fechas">
+      <div class="card">
+        <h2>próximas fechas</h2>
+        <p>Todavía no tenemos fechas confirmadas.  
+        Vamos a avisar por redes cuando salga la primera.</p>
+        <ul><li>— pronto anuncios 🚀</li></ul>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="card">
+        <h2>galería</h2>
+        <div class="galeria">
+          <img src="fotos/banda1.jpg" alt="foto 1">
+          <img src="fotos/banda2.jpg" alt="foto 2">
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="card">
+        <h2>contacto / prensa</h2>
+        <p>Para consultas o fechas, escribinos a  
+        <a href="mailto:preguntale.banda@gmail.com">preguntale.banda@gmail.com</a></p>
+        <p class="mono">respuesta rápida · buenos aires · alt rock</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>© <span id="year"></span> Preguntale. hecho con ♥ en buenos aires.</small>
+  </footer>
+</body>
+</html>
