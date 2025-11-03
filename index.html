@@ -24,7 +24,7 @@
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
-      background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9)), url('fondo.png') center/cover fixed no-repeat;
+      background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9)), url('fotos/fondo.png') center/cover fixed no-repeat;
       color:var(--fg);
       line-height:1.6;
     }
@@ -62,6 +62,20 @@
 
     footer{padding:36px 24px;border-top:1px solid var(--line);color:var(--muted);text-align:center}
     @media (max-width:720px){.links{display:none}.menu-btn{display:inline-flex}.grid{grid-template-columns:1fr}.hero{padding-top:72px}}
+    
+    /* Estilos para la nueva sección profesional */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .logo-circular {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--line);
+    }
   </style>
   <script>
     function toggleMenu(){
@@ -89,7 +103,7 @@
 
   <main id="inicio" class="container">
     <section class="hero">
-      <img src="banda1.jpg" alt="foto de la banda">
+      <img src="fotos/logo.png" alt="Logo Preguntale" class="logo-circular">
       <h1>rock alternativo<br>desde buenos aires</h1>
       <p class="sub"><strong>Preguntale</strong> · banda nueva · sonido propio</p>
       <div class="cta">
@@ -105,7 +119,7 @@
         <p>Todavía no tenemos canciones publicadas.  
         Pronto vamos a subir nuestras primeras grabaciones.  
         Mientras tanto, podés ver ensayos, clips y novedades en nuestras redes.</p>
-        <p class="mono">instagram ▶︎ @preguntale.banda<br>youtube ▶︎ @PreguntaleMusic</p>
+        <p class="mono">instagram▶︎ @preguntale.banda<br>youtube ▶︎ @PreguntaleMusic</p>
       </div>
     </section>
 
@@ -121,9 +135,9 @@
     <section id="fechas">
       <div class="card">
         <h2>próximas fechas</h2>
-        <p>Todavía no tenemos fechas confirmadas.  
-        Vamos a avisar por redes cuando salga la primera.</p>
-        <ul><li>— pronto anuncios 🚀</li></ul>
+        <p>¡Ya tenemos fecha confirmada!  
+        Nos presentamos el <strong>28 de noviembre</strong> en <strong>Café Rock La Ve</strong>, Av. Lope de Vega 250, Buenos Aires.  
+        ¡Nos vemos ahí! 🚀</p>
       </div>
     </section>
 
@@ -131,9 +145,25 @@
       <div class="card">
         <h2>galería</h2>
         <div class="galeria">
-          <img src="banda1.jpg" alt="foto 1">
-          <img src="banda2.jpg" alt="foto 2">
+          <img src="fotos/banda1.jpg" alt="foto 1">
+          <img src="fotos/banda2.jpg" alt="foto 2">
         </div>
+      </div>
+    </section>
+
+    <section id="profesional">
+      <div class="card">
+        <h2>Información Profesional</h2>
+        <div class="logo-container">
+          <img src="fotos/logo.png" alt="Logo Preguntale" class="logo-circular">
+        </div>
+        <p>Para contrataciones, rider técnico o información profesional, escribinos a:  
+          <a href="mailto:preguntale.banda@gmail.com">preguntale.banda@gmail.com</a></p>
+        <p>O consultanos por redes sociales:</p>
+        <ul>
+          <li><a href="https://www.instagram.com/preguntale.banda/" target="_blank">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@PreguntaleMusic" target="_blank">YouTube</a></li>
+        </ul>
       </div>
     </section>
 
